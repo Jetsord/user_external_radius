@@ -1,6 +1,6 @@
 External user authentication
 ============================
-Authenticate user login against FTP, IMAP or SMB.
+Authenticate user login against FTP, IMAP, SMB, WebDAV or Radius.
 
 Passwords are not stored locally; authentication always happens against
 the remote server.
@@ -131,3 +131,20 @@ Add the following to your `config.php`:
             'arguments' => array('https://example.com/webdav'),
         ),
     ),
+
+
+Radius
+------
+
+Authenticate users by Radius call. You can use nearby any Radius server to authenticate owncloud users (check https://github.com/dapphp/radius/blob/master/README.md).
+
+### Configuration
+The only supported parameter is the URL of the web server.
+
+Add the following to your `config.php`:
+	
+	'user_backends' => array(
+		array(
+			'class' => 'OC_User_RADIUS', 
+			'arguments' => array("SERVER", "REALM", "SECRET"), 
+	),
