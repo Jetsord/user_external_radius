@@ -143,8 +143,9 @@ The only supported parameter is the URL of the web server.
 
 Add the following to your `config.php`:
 	
-	'user_backends' => array(
-		array(
-			'class' => 'OC_User_RADIUS', 
-			'arguments' => array("SERVER", "REALM", "SECRET"), 
-	),
+    'user_backends' => array(
+        array(
+            'class' => 'OC_User_RADIUS', 
+            'arguments' => array("SERVER", "REALM", "SECRET"), 
+        ),
+    ),
